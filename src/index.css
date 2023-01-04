@@ -1,13 +1,141 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spicy Rice', cursive;
+
+}
+.App{
+  background-image:url(./images/candyCrushBg.jpg);
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes btnAnimation{
+  from {
+ 
+    top: 50%;
+    
+  }
+  to{
+    
+    top: 51%;
+    
+  }
+}
+
+.btn-ani{
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  padding: 0.7rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  
+  background: linear-gradient(rgb(242, 140, 157),red);
+  color: white;
+  font-weight: bolder;
+  text-shadow: 2px 3px 3px black;
+
+  
+  animation: btnAnimation 500ms linear 2s infinite alternate ;
+  letter-spacing: 0.1rem;
+  font-size: medium;
+
+}
+
+.gameArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image:url(./images/playAreaBg.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 40px;
+  letter-spacing: 0.1rem;
+}
+.gameSquare{
+  display: flex;
+  width: 560px;
+  height: 560px;
+  outline: 2px solid black;
+  flex-wrap: wrap;
+}
+.candy{
+  height: 70px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  outline: 1px solid white;
+  cursor: grab;
+  
+
+}
+.display-score{
+  display: flex;
+  justify-content: center;
+}
+.scoreInfo{
+  display: flex;
+  justify-content: space-between;
+  width: 560px;
+}
+
+.gameOverPos{
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 560px;
+    height: 280px;
+    border-radius: 10px;
+    
+}
+.gameOverInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 18%;
+  letter-spacing: 0.1rem;
+}
+@keyframes playAgainBtnAnimation{
+  from {
+    
+    margin: 10%;
+   
+  }
+  to{
+    
+    margin: 11%;
+    
+  }
+}
+
+.gameOverInfo button{
+  padding: 0.7rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(rgb(242, 140, 157),red);
+  color: white;
+  font-weight: bolder;
+  text-shadow: 2px 3px 3px black;
+  animation: playAgainBtnAnimation 500ms linear 2s infinite alternate ;
+  margin: 10%;
+  letter-spacing: 0.1rem;
+  font-size: medium;
+
+  
 }
